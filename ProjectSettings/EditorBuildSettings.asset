@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FireMan 6.unity
+    guid: 01e5e3986e8692d43af772fb06e2fc48
+  - enabled: 1
+    path: Assets/Scenes/FireMan 7.unity
+    guid: 93294bc8df5abd44e8c06a71a906c67a
+  - enabled: 1
+    path: Assets/Scenes/FireMan 8.unity
+    guid: f394477c0d9d68446b7b08bbbeb5e553
+  - enabled: 1
+    path: Assets/Scenes/FireMan 9.unity
+    guid: d673f7404578eb148948a44d4d11c009
+  m_configObjects: {}
