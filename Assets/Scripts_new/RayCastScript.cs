@@ -6,11 +6,15 @@ public class RayCastScript : MonoBehaviour
 {
     public static RayCastScript instance;
 
-    public GameObject Spray, Confetti, boss, boss2, HelpText;
+    public GameObject Spray, Confetti, boss, boss2, HelpText, timeCounter;
     public RaycastHit hit;
     public GameObject Splash_Prefab;
     public bool GameOver;
 	public GameObject GameOverPanel, AssaultRifleMain;
+
+    public int hitCount;
+
+    public bool FireOffBoy;
 
     private void Awake()
     {
@@ -51,13 +55,27 @@ public class RayCastScript : MonoBehaviour
         //RaycastHit hit;
         if(Physics.Raycast(Spray.transform.position, Spray.transform.forward, out hit))
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
 
             if (!hit.transform.CompareTag("EMPTY")) 
             { 
                 hit.transform.GetComponent<ParticleSystem>().Stop();
                 //PlayerPrefs.SetInt("WaterShot", PlayerPrefs.GetInt("WaterShot") + 1);
                 
+            }
+
+            if (hit.transform.CompareTag("FIRE"))
+            {
+                hitCount++; 
+            }
+
+
+            if (hit.transform.CompareTag("Player"))
+            {
+                HelpText.SetActive(false);
+                timeCounter.SetActive(false);
+                GameManager2.instance.fireBoy.GetComponent<Animator>().enabled = false;
+                FireOffBoy = true;
             }
 
             //Instantiate(Splash_Prefab, hit.transform.position, Quaternion.identity);
